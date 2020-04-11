@@ -1,6 +1,5 @@
 <template>
   <div class="user">用户模块
-    {{$store.state.token}}
   </div>
 </template>
 

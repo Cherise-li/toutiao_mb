@@ -12,7 +12,7 @@ export default new Vuex.Store({
     setUser (state, obj) {
       state.token = obj
       setItem('token', obj)
-      // console.log(obj)
+      console.log(obj)
     }
   },
   actions: {},

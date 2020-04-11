@@ -8,3 +8,18 @@
 .van-nav-bar .van-icon-arrow-left {
   color: #fff;
 }
+.van-nav-bar .van-nav-bar__text {
+  color: #fff;
+}
+.home {
+  margin-bottom: 50px;
+}
+.home .van-tabs__wrap {
+  position: fixed;
+  top: 46px;
+  left: 0;
+  z-index: 1;
+}
+.home .van-tabs--line {
+  padding-top: 100px;
+}
