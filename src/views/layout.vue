@@ -21,7 +21,7 @@ export default {
   name: 'Layout',
   methods: {
     hSearch () {
-
+      this.$router.push('/search')
     }
   }
 }

@@ -25,11 +25,6 @@ const routes = [
         component: () => import('../views/question/index.vue')
       },
       {
-        path: '/search',
-        name: 'Search',
-        component: () => import('../views/search/index')
-      },
-      {
         path: '/user',
         name: 'User',
         component: () => import('../views/user/index')
@@ -40,6 +35,20 @@ const routes = [
         component: () => import('../views/video/index')
       }
     ]
+  },
+  {
+    path: '/search',
+    component: () => import('../views/search/index.vue')
+  },
+  {
+    path: '/search/result',
+    name: 'searchResult',
+    component: () => import('../views/search/result.vue')
+  },
+  {
+    path: '/artical/:id',
+    name: 'articalDetail',
+    component: () => import('../views/artical/index')
   }
 ]
 

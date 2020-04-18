@@ -7,7 +7,11 @@
       finished-text="没有更多了"
       @load="onLoad"
     >
-  <van-cell v-for="item in list" :key="item.id" :title="item.title">
+  <van-cell
+  v-for="item in list"
+  :key="item.id"
+  :title="item.title"
+  @click="$router.push('/artical/'+item.art_id)">
        <div slot="label">
                 <van-grid :border="false" :column-num="item.cover.images.length">
                     <van-grid-item v-for="(img, index) in item.cover.images" :key="index">
@@ -18,7 +22,7 @@
                     <span>{{ item.aut_name }}</span>
                     <span>{{ item.comm_count }}评论</span>
                     <span>{{ item.pubdate | relativeTime }}</span>
-                    <span class="close" v-if="$store.state.token" @click="hMoreAction(item.art_id)">
+                    <span class="close" v-if="$store.state.token" @click.stop="hMoreAction(item.art_id)">
                        <van-icon name="cross"></van-icon>
                     </span>
                 </div>

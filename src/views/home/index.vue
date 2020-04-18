@@ -12,7 +12,12 @@
         <van-icon name="wap-nav" size="24" />
     </div>
     <van-action-sheet   title="编辑频道" v-model="showChannelEdit">
-        <channel-edit :channels='channels' @changeChannel='hChangeChannel' @close='showChannelEdit=false'></channel-edit>
+        <channel-edit
+        :channels='channels'
+        :activeIndex = 'channelId'
+        @changeIndex = 'hChangeIndex'
+        @changeChannel='hChangeChannel'
+        @close='showChannelEdit=false'></channel-edit>
     </van-action-sheet>
   </div>
 </template>
@@ -44,6 +49,9 @@ export default {
     this.hChannels()
   },
   methods: {
+    hChangeIndex (index) {
+      this.channelId = index
+    },
     hChangeChannel (channel) {
       const idx = this.channels.findIndex(it => it.id === channel.id)
       console.log(idx)
