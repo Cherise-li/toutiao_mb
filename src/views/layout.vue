@@ -1,6 +1,7 @@
 <template>
   <div class="layout">
    <van-nav-bar
+  v-show="$route.path!=='/user'"
   title="黑马头条"
   right-text="搜索"
   @click-right="hSearch"

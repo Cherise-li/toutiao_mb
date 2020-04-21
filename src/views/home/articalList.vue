@@ -1,5 +1,5 @@
 <template>
-  <div class='artical'>
+  <div class='artical' @scroll="remember" ref="scroll">
     <van-pull-refresh v-model="isLoadingNew"  @refresh="onRefresh">
     <van-list
       v-model="loading"
@@ -50,7 +50,15 @@ export default {
   created () {
     this.delArtical()
   },
+  activated () {
+    if (this.scrollTop && this.$refs.scroll) {
+      this.$refs.scroll.scrollTop = this.scrollTop
+    }
+  },
   methods: {
+    remember (e) {
+      this.scrollTop = e.target.scrollTop
+    },
     delArtical () {
       this.$eventBus.$on('delArtical', (data) => {
         if (data.channelId === this.channel.id) {

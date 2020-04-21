@@ -79,7 +79,8 @@ export default {
         const {
           data: { data }
         } = await login(this.user)
-        this.$router.push('/')
+        const to = this.$route.query.from || '/'
+        this.$router.push(to)
         this.$toast.success('登录成功')
         this.$store.commit('setUser', data)
       } catch (err) {

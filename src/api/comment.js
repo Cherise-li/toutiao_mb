@@ -19,3 +19,24 @@ export function addComment (data) {
     data
   })
 }
+/**
+ * 取消对文章评论的喜欢
+ */
+export function cancelLike (comId) {
+  return request({
+    method: 'DELETE',
+    url: `/app/v1_0/comment/likings/${comId}`
+  })
+}
+/**
+ * 对评论的回复点赞
+ */
+export function addLike (comId) {
+  return request({
+    method: 'POST',
+    url: '/app/v1_0/comment/likings',
+    data: {
+      target: comId
+    }
+  })
+}

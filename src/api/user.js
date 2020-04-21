@@ -32,6 +32,28 @@ export function getInfo () {
   })
 }
 /**
+ * 获取指定用户信息
+ * @param {*} data
+ */
+export function getMyInfo () {
+  return request({
+    method: 'GET',
+    url: '/app/v1_0/user'
+  })
+}
+/**
+ * 修改用户信息
+ * @param {*} userId
+ */
+
+export function updateInfo (data) {
+  return request({
+    method: 'PATCH',
+    url: '/app/v1_0/user/profile',
+    data
+  })
+}
+/**
  * 关注用户
  */
 export function follow (userId) {
@@ -50,5 +72,15 @@ export function unFollow (userId) {
   return request({
     method: 'DELETE',
     url: `/app/v1_0/user/followings/${userId}`
+  })
+}
+/**
+ * 修改用户头像
+ */
+export function changePhoto (photo) {
+  return request({
+    method: 'PATCH',
+    url: '/app/v1_0/user/photo',
+    data: photo
   })
 }
