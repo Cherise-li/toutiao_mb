@@ -1,33 +1,20 @@
-.van-nav-bar {
-  // position: fixed;
-  background-color: #3296fa;
-  .van-nav-bar__title {
-    color: #fff;
-    font-size: 24px;
+// 全局样式 在main.js中引入即可
+// vant-ui有自已的样式
+// 如果这个项目需要去覆盖vant-ui的样式，统一写在这里
+.van-nav-bar{
+  background-color: #3196fa;
+  .van-nav-bar__title{
+      color:#fff;
   }
-  .van-icon {
-    color: #fff;
+  // 搜索
+  .van-nav-bar__text{
+      color:#fff;
   }
-  .van-nav-bar__text {
-    color: #fff;
+  .van-icon{
+      color:#fff;
   }
 }
-.home {
-  margin-bottom: 50px;
-  .van-tabs__wrap{
-    position: fixed;
-    top: 46px;
-    left: 0;
-    right: 40px;
-    z-index: 1;
-  } 
-  .van-tabs--line{
-    padding-top:100px; // 让出van-tabs的高度
-}
-}
-//  .van-tabs__content {
-//    margin-top: 100px;
-//  }
+
 #app{
   position: absolute;
   left: 0;
@@ -36,11 +23,32 @@
   width: 100%;
   height: 100%;
 }
-.layout {
+// .container是Layout.vue组件的根元素的类名
+.container{
   width: 100%;
   height: 100%;
 }
-.artical {
+.index {
   height: 100%;
-  overflow: auto;
+  .van-tabs {
+      display: flex;
+      flex-direction: column;
+     
+      height: 100%;
+      .van-tabs__content {
+          flex:1;
+          overflow: hidden;
+      }
+  }
+  .van-tab__pane{
+      height: 100%;
+  }
+  // .scroll-wrapper是ArticleList.vue组件的根元素的类名
+  .scroll-wrapper{
+      overflow:auto;
+      height: 100%;
+  }
+}
+.home {
+  margin-top: 50px;
 }

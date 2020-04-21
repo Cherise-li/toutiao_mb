@@ -49,6 +49,7 @@ export default {
   },
   created () {
     this.delArtical()
+    console.log('我发请求了')
   },
   activated () {
     if (this.scrollTop && this.$refs.scroll) {
@@ -91,7 +92,6 @@ export default {
         timestamp: this.timestamp || Date.now(),
         with_top: 1
       })
-      console.log(data)
       this.list.push(...data.results)
       this.timestamp = data.pre_timestamp
       // 加载状态结束

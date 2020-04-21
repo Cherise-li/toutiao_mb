@@ -34,7 +34,8 @@ import {
   Image,
   PullRefresh,
   ActionSheet,
-  Dialog
+  Dialog,
+  Search
 
 } from 'vant'
 Vue.use(Tabbar)
@@ -61,6 +62,7 @@ Vue.use(Image)
 Vue.use(PullRefresh)
 Vue.use(ActionSheet)
 Vue.use(Dialog)
+Vue.use(Search)
 
 // Vue.use(Vant)
 // Vue.use(Lazyload)

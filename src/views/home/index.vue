@@ -54,8 +54,6 @@ export default {
     },
     hChangeChannel (channel) {
       const idx = this.channels.findIndex(it => it.id === channel.id)
-      console.log(idx)
-      console.log(channel)
       this.channelId = idx
     },
     async hReport (channelId) {
@@ -88,9 +86,7 @@ export default {
     async hChannels () {
       try {
         const { data: { data } } = await getChannels()
-        console.log(data.channels)
         this.channels = data.channels
-        console.log(this.channels)
       } catch (err) {
         this.$toast.fail('获取频道失败')
       }
